@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PORTFOLIO CONTENIDO | Strategic Excellence in Content</title>
+<!-- External Resources -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script defer="" src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#f2eff9",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed": "#161c26",
+                    "on-secondary-container": "#745c00",
+                    "surface-container-high": "#e9e7f0",
+                    "secondary-fixed-dim": "#e9c349",
+                    "on-primary-container": "#7e8491",
+                    "on-tertiary": "#ffffff",
+                    "brushed-champagne": "#D4AF37",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#c1c6d5",
+                    "surface-tint": "#595e6b",
+                    "secondary-container": "#fed65b",
+                    "tertiary": "#000000",
+                    "on-background": "#1b1b22",
+                    "on-surface": "#1b1b22",
+                    "midnight-navy": "#050A14",
+                    "primary": "#000000",
+                    "inverse-surface": "#303037",
+                    "surface-dim": "#dbd9e2",
+                    "error": "#ba1a1a",
+                    "silk-grey": "#F5F5F7",
+                    "ink-black": "#000000",
+                    "tertiary-fixed": "#e2e2e4",
+                    "surface-bright": "#fbf8ff",
+                    "on-tertiary-container": "#838486",
+                    "on-tertiary-fixed-variant": "#454749",
+                    "primary-container": "#161c26",
+                    "inverse-primary": "#c1c6d5",
+                    "tertiary-container": "#1a1c1d",
+                    "surface-container-low": "#f5f2fc",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-highest": "#e4e1eb",
+                    "primary-fixed": "#dde2f1",
+                    "on-surface-variant": "#45474b",
+                    "background": "#fbf8ff",
+                    "on-tertiary-fixed": "#1a1c1d",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed-variant": "#574500",
+                    "outline": "#76777c",
+                    "pure-white": "#FFFFFF",
+                    "secondary": "#735c00",
+                    "on-secondary-fixed": "#241a00",
+                    "error-container": "#ffdad6",
+                    "surface-variant": "#e4e1eb",
+                    "surface-container": "#efecf6",
+                    "secondary-fixed": "#ffe088",
+                    "tertiary-fixed-dim": "#c6c6c8",
+                    "outline-variant": "#c6c6cc",
+                    "on-primary-fixed-variant": "#414753",
+                    "surface": "#fbf8ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "auto",
+                    "gutter": "24px",
+                    "max-width": "1200px",
+                    "unit": "8px",
+                    "section-padding": "120px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter", "sans-serif"],
+                    "body-lg": ["Inter", "sans-serif"],
+                    "headline-md": ["DM Serif Display", "serif"],
+                    "label-md": ["Inter", "sans-serif"],
+                    "label-lg": ["Inter", "sans-serif"],
+                    "display-lg": ["DM Serif Display", "serif"],
+                    "display-lg-mobile": ["DM Serif Display", "serif"],
+                    "headline-lg": ["DM Serif Display", "serif"],
+                    "headline-xl": ["DM Serif Display", "serif"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "32px", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "display-lg": ["80px", {"lineHeight": "96px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "display-lg-mobile": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "400"}],
+                    "headline-xl": ["64px", {"lineHeight": "72px", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .backdrop-glass {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .marquee-track {
+            display: flex;
+            width: calc(250px * 10);
+            animation: scroll 40s linear infinite;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-250px * 5)); }
+        }
+        .gated-blur {
+            filter: blur(12px) grayscale(40%);
+            transition: filter 0.5s ease;
+        }
+        [x-cloak] { display: none !important; }
+        
+        /* Premium Sans-serif Tuning */
+        .sans-premium {
+            font-family: 'Inter', sans-serif;
+            letter-spacing: -0.01em;
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body class="bg-silk-grey text-midnight-navy font-body-md selection:bg-brushed-champagne/30 overflow-x-hidden">
+<!-- 1. Header -->
+<header :class="scrolled ? 'bg-black/95' : 'bg-black/80'" @scroll.window="scrolled = (window.pageYOffset &gt; 20 ? true : false)" class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-xl border-b border-white/10" x-data="{ scrolled: false }">
+<div class="max-w-[1200px] mx-auto px-6 py-4 flex justify-between items-center">
+<a class="font-headline-md text-2xl text-pure-white tracking-tighter" href="#">PORTFOLIO CONTENIDO</a>
+<nav class="hidden md:flex items-center gap-12">
+<a class="font-label-lg text-[13px] uppercase tracking-widest text-silk-grey/80 hover:text-brushed-champagne transition-colors" href="#methodology">Services</a>
+<a class="font-label-lg text-[13px] uppercase tracking-widest text-silk-grey/80 hover:text-brushed-champagne transition-colors" href="#methodology">Process</a>
+<a class="font-label-lg text-[13px] uppercase tracking-widest text-silk-grey/80 hover:text-brushed-champagne transition-colors" href="#portfolio">Portfolio</a>
+<a class="font-label-lg text-[13px] uppercase tracking-widest text-silk-grey/80 hover:text-brushed-champagne transition-colors" href="#faq">Journal</a>
+</nav>
+<button class="bg-brushed-champagne text-midnight-navy px-8 py-3.5 font-label-lg text-[13px] uppercase tracking-[0.15em] font-bold hover:bg-pure-white transition-all shadow-lg">
+            WORK WITH US
+        </button>
+</div>
+</header>
+<!-- 2. Hero Section -->
+<section class="relative min-h-screen flex items-center bg-black pt-24 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<!-- Video Placeholder / Background Image -->
+<img alt="Hero background visual" class="w-full h-full object-cover opacity-60" src="https://lh3.googleusercontent.com/aida/ADBb0ujgK3kzkEdF3_zLplryhqIDPwISEpacK9wbKAEO3Nz_zsTtokRWCgcMS1VCehU7duv3bV5UOapaL6o3yOWL44d6pNJOJ3N-e_M9f1HVuFwkO477e2eJlEFeJ7vdVxvTu5Qoxn2h5f72_iTiNIN4l5m4-IteFOFRV0S5UUXj5EVFQ-WoNTB00_8qQ65fCEjk8e6K2Md9HqUSaWs29ieTR4lUPU0ZvC9UZVjFIL5onvVoqksTGNH7SjZu3kSL"/>
+<!-- Deep Black Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black"></div>
+</div>
+<div class="max-w-[1200px] mx-auto px-6 relative z-10 w-full text-center">
+<div class="flex flex-col items-center">
+<span class="text-brushed-champagne font-label-lg text-sm uppercase tracking-[0.4em] mb-8 block font-medium">Strategic Content Authority</span>
+<h1 class="font-headline-xl text-[56px] md:text-[88px] leading-[1.05] text-pure-white mb-10 tracking-tighter max-w-5xl mx-auto">
+                Marketing de Contenido para <br/><span class="italic text-[#e5c273] font-headline-xl">Posicionar su Marca</span>
+</h1>
+<p class="sans-premium text-silk-grey/80 text-xl max-w-2xl mb-14 leading-relaxed font-light">
+                Precisión en cada palabra. Creamos contenido estratégico personalizado para transformar su visión en autoridad digital. Elevamos su presencia editorial con rigor arquitectónico.
+            </p>
+<div class="flex flex-col items-center gap-6 mb-24">
+<a class="bg-pure-white text-midnight-navy px-12 py-5 font-label-lg text-sm uppercase tracking-[0.2em] font-bold hover:bg-brushed-champagne transition-all duration-500" href="#portfolio">
+                    COMENZAR
+                </a>
+<p class="text-silk-grey/40 font-label-md text-xs tracking-wider">
+                    Comienza gratuitamente. No hace falta tarjeta de crédito.
+                </p>
+</div>
+<!-- Optimized Metrics Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-32 pt-16 border-t border-white/10 w-full max-w-4xl mx-auto">
+<div class="flex flex-col items-center">
+<span class="text-pure-white font-headline-md text-5xl mb-2">14M+</span>
+<span class="text-silk-grey/40 font-label-md uppercase tracking-[0.2em] text-[11px] font-semibold">Clientes Emprendedores</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-pure-white font-headline-md text-5xl mb-2">+36MM$</span>
+<span class="text-silk-grey/40 font-label-md uppercase tracking-[0.2em] text-[11px] font-semibold">Ganado por Emprendedores</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-pure-white font-headline-md text-5xl mb-2">+200</span>
+<span class="text-silk-grey/40 font-label-md uppercase tracking-[0.2em] text-[11px] font-semibold">Países y Territorios</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Methodology (Conducto de Contenido) -->
+<section class="py-[140px] bg-pure-white relative" id="methodology" x-data="{ activeStep: 1 }">
+<!-- Smooth Transition from Dark Hero -->
+<div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-black to-transparent pointer-events-none opacity-20"></div>
+<div class="max-w-[1200px] mx-auto px-6 mb-24 text-center">
+<div class="max-w-3xl mx-auto">
+<span class="text-brushed-champagne font-label-lg text-sm uppercase tracking-[0.3em] mb-6 block font-medium">Process Architecture</span>
+<h2 class="font-headline-xl text-headline-xl text-midnight-navy mb-8">Conducto de Contenido</h2>
+<p class="sans-premium text-on-surface-variant text-xl leading-relaxed">Un ecosistema editorial riguroso diseñado para convertir la narrativa en un activo financiero tangible.</p>
+</div>
+</div>
+<div class="max-w-[1200px] mx-auto px-6">
+<div class="flex flex-col gap-px bg-silk-grey/50 border border-silk-grey/30 shadow-2xl">
+<!-- Step 1: Diagnóstico -->
+<div :class="activeStep === 1 ? 'flex-grow z-10 shadow-lg' : ''" class="bg-pure-white group transition-all duration-700">
+<button @click="activeStep = 1" class="w-full flex items-center justify-between p-10 text-left hover:bg-silk-grey/30 transition-colors">
+<div class="flex items-center gap-12">
+<span class="font-headline-md text-4xl text-brushed-champagne/30 group-hover:text-brushed-champagne transition-colors">01</span>
+<div>
+<h3 class="font-headline-md text-3xl text-midnight-navy">Diagnóstico</h3>
+<p class="font-label-md text-on-tertiary-container uppercase tracking-[0.2em] mt-1 text-[11px]">Auditoría de ADN Digital</p>
+</div>
+</div>
+<span :class="activeStep === 1 ? 'rotate-45' : ''" class="material-symbols-outlined text-brushed-champagne transition-transform duration-500">add</span>
+</button>
+<div x-cloak="" x-collapse="" x-show="activeStep === 1">
+<div class="px-10 pb-20 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="space-y-8">
+<p class="sans-premium text-on-surface-variant text-lg leading-relaxed font-light">
+                                Sin diagnóstico no hay estrategia. Analizamos exhaustivamente su ecosistema actual para identificar grietas en la autoridad y oportunidades de posicionamiento desatendidas.
+                            </p>
+<div class="py-10 border-y border-brushed-champagne/10">
+<span class="font-label-lg text-brushed-champagne text-xs uppercase tracking-widest block mb-4">MÉTRICA DE ÉXITO</span>
+<p class="font-headline-md text-6xl text-midnight-navy tracking-tight">+140% <span class="text-lg font-body-md text-on-tertiary-container uppercase tracking-widest ml-2">Keywords de Conversión</span></p>
+</div>
+<p class="font-label-md italic text-on-tertiary-container text-sm">"La base de la autoridad comienza con la auto-conciencia de marca."</p>
+</div>
+<div class="relative h-[450px] overflow-hidden group/img">
+<img alt="Diagnóstico Visual" class="w-full h-full object-cover grayscale opacity-90 group-hover/img:grayscale-0 group-hover/img:scale-105 transition-all duration-1000" src="https://lh3.googleusercontent.com/aida/ADBb0uiz-IztTtU0hu4ffKLNXpvcbogfMBxqHgbR65-P5EcnLGjFQ2ZAWkqa2xuhlK7_DfQpazoCuG5CjkpKJ9okRH3rN0CTWrWr5M3kApmDd_9jSQEZRH8cOlLRvVy5qgI2oYsE0KvCTFLMnhBPs4XAi6GZyNxDxuVV53C0vD7u_4InAoHfmIrCYIJaB0aByGkpLcOg1eF5sSN3lOldukGjsD55TqxH3P-H9grUqbpXTwT_eAnVG93LdKz98Ru5"/>
+<div class="absolute inset-0 bg-midnight-navy/5 group-hover/img:bg-transparent transition-colors duration-700"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 2: Estrategia -->
+<div :class="activeStep === 2 ? 'flex-grow z-10 shadow-lg' : ''" class="bg-pure-white group transition-all duration-700">
+<button @click="activeStep = 2" class="w-full flex items-center justify-between p-10 text-left hover:bg-silk-grey/30 transition-colors">
+<div class="flex items-center gap-12">
+<span class="font-headline-md text-4xl text-brushed-champagne/30 group-hover:text-brushed-champagne transition-colors">02</span>
+<div>
+<h3 class="font-headline-md text-3xl text-midnight-navy">Estrategia</h3>
+<p class="font-label-md text-on-tertiary-container uppercase tracking-[0.2em] mt-1 text-[11px]">Arquitectura de Pilares</p>
+</div>
+</div>
+<span :class="activeStep === 2 ? 'rotate-45' : ''" class="material-symbols-outlined text-brushed-champagne transition-transform duration-500">add</span>
+</button>
+<div x-cloak="" x-collapse="" x-show="activeStep === 2">
+<div class="px-10 pb-20 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="space-y-8">
+<p class="sans-premium text-on-surface-variant text-lg leading-relaxed font-light">
+                                Definimos los pilares narrativos que sostendrán su reputación. No disparamos al azar; cada pieza de contenido tiene un objetivo de conversión pre-establecido.
+                            </p>
+<div class="py-10 border-y border-brushed-champagne/10">
+<span class="font-label-lg text-brushed-champagne text-xs uppercase tracking-widest block mb-4">MÉTRICA DE ÉXITO</span>
+<p class="font-headline-md text-6xl text-midnight-navy tracking-tight">2.4x <span class="text-lg font-body-md text-on-tertiary-container uppercase tracking-widest ml-2">Autoridad de Dominio</span></p>
+</div>
+</div>
+<div class="relative h-[450px] overflow-hidden group/img">
+<img alt="Estrategia Visual" class="w-full h-full object-cover grayscale opacity-90 group-hover/img:grayscale-0 transition-all duration-1000" src="https://lh3.googleusercontent.com/aida/ADBb0ujgK3kzkEdF3_zLplryhqIDPwISEpacK9wbKAEO3Nz_zsTtokRWCgcMS1VCehU7duv3bV5UOapaL6o3yOWL44d6pNJOJ3N-e_M9f1HVuFwkO477e2eJlEFeJ7vdVxvTu5Qoxn2h5f72_iTiNIN4l5m4-IteFOFRV0S5UUXj5EVFQ-WoNTB00_8qQ65fCEjk8e6K2Md9HqUSaWs29ieTR4lUPU0ZVjFIL5onvVoqksTGNH7SjZu3kSL"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 3: Producción -->
+<div :class="activeStep === 3 ? 'flex-grow z-10 shadow-lg' : ''" class="bg-pure-white group transition-all duration-700">
+<button @click="activeStep = 3" class="w-full flex items-center justify-between p-10 text-left hover:bg-silk-grey/30 transition-colors">
+<div class="flex items-center gap-12">
+<span class="font-headline-md text-4xl text-brushed-champagne/30 group-hover:text-brushed-champagne transition-colors">03</span>
+<div>
+<h3 class="font-headline-md text-3xl text-midnight-navy">Producción</h3>
+<p class="font-label-md text-on-tertiary-container uppercase tracking-[0.2em] mt-1 text-[11px]">Artesanía Editorial</p>
+</div>
+</div>
+<span :class="activeStep === 3 ? 'rotate-45' : ''" class="material-symbols-outlined text-brushed-champagne transition-transform duration-500">add</span>
+</button>
+<div x-cloak="" x-collapse="" x-show="activeStep === 3">
+<div class="px-10 pb-20 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="space-y-8">
+<p class="sans-premium text-on-surface-variant text-lg leading-relaxed font-light">
+                                Ejecución de alta precisión. Nuestros redactores senior y especialistas técnicos crean activos que no solo informan, sino que seducen y persuaden mediante un bilingüismo impecable.
+                            </p>
+<div class="py-10 border-y border-brushed-champagne/10">
+<span class="font-label-lg text-brushed-champagne text-xs uppercase tracking-widest block mb-4">RESULTADO CLAVE</span>
+<p class="font-headline-md text-6xl text-midnight-navy tracking-tight">+200% <span class="text-lg font-body-md text-on-tertiary-container uppercase tracking-widest ml-2">Engagement B2B</span></p>
+</div>
+</div>
+<div class="relative h-[450px] overflow-hidden group/img">
+<img alt="Producción Visual" class="w-full h-full object-cover grayscale opacity-90 group-hover/img:grayscale-0 transition-all duration-1000" src="https://lh3.googleusercontent.com/aida/ADBb0ugLxk3Jjsp_u7TEzTO_urP1cAPgxbFGLLj8uHjJ00Bc0Qq_P9NnMjHhqOtrqQ-wlJKhbKrBGsQo3XrA-qKWXFx2jTKx3qlve2Ms1SU-Nv1YZFAWiJInkeOB8bn1OVnbWAroTkNqanYHzgVhksjNX3b89limo1sX-o7ve_FP7PwoMjAsELei3JmJaKDG8Jh4xNH4h9X9L0EOWkiuf2k3N0cd_Pz1WZM6P-YT19yPlmr9MfE9gCRuu_gPP3it"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 4: Optimización -->
+<div :class="activeStep === 4 ? 'flex-grow z-10 shadow-lg' : ''" class="bg-pure-white group transition-all duration-700">
+<button @click="activeStep = 4" class="w-full flex items-center justify-between p-10 text-left hover:bg-silk-grey/30 transition-colors">
+<div class="flex items-center gap-12">
+<span class="font-headline-md text-4xl text-brushed-champagne/30 group-hover:text-brushed-champagne transition-colors">04</span>
+<div>
+<h3 class="font-headline-md text-3xl text-midnight-navy">Optimización</h3>
+<p class="font-label-md text-on-tertiary-container uppercase tracking-[0.2em] mt-1 text-[11px]">Refinamiento Cuántico</p>
+</div>
+</div>
+<span :class="activeStep === 4 ? 'rotate-45' : ''" class="material-symbols-outlined text-brushed-champagne transition-transform duration-500">add</span>
+</button>
+<div x-cloak="" x-collapse="" x-show="activeStep === 4">
+<div class="px-10 pb-20 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="space-y-8">
+<p class="sans-premium text-on-surface-variant text-lg leading-relaxed font-light">
+                                El contenido es un organismo vivo. Analizamos el rendimiento en tiempo real para ajustar la narrativa, optimizar el SEO y garantizar que cada palabra trabaje para su ROI.
+                            </p>
+<div class="py-10 border-y border-brushed-champagne/10">
+<span class="font-label-lg text-brushed-champagne text-xs uppercase tracking-widest block mb-4">MÉTRICA DE ÉXITO</span>
+<p class="font-headline-md text-6xl text-midnight-navy tracking-tight">-30% <span class="text-lg font-body-md text-on-tertiary-container uppercase tracking-widest ml-2">Reducción CPA</span></p>
+</div>
+</div>
+<div class="relative h-[450px] overflow-hidden group/img">
+<img alt="Optimización Visual" class="w-full h-full object-cover grayscale opacity-90 group-hover/img:grayscale-0 transition-all duration-1000" src="https://lh3.googleusercontent.com/aida/ADBb0uj2J5CSkk4ZP7s8Pin5mcDUxAfXZNupaH9ADeGFLoIQXIWmBVHiCmuSMHXMP9HG0Heed-DNVrGl1Cuoy4k32K5eZf3IugvbWQwQbgqHR25iow12h6iO-otIg3M9RuzZnZSuQmgQAcnp1UzxpUDeEMheG8GUz8QvkFVAQNrp_O1u0oUy4GRYyVuRQD5juAwPl9Yq5dc_8ip4KTL5J04ZplWf4jBG6ujVQ2xjcpkAVmYFiDBdTczfUhE0aXvn"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section class="py-[140px] bg-silk-grey overflow-hidden" id="blueprint">
+<div class="max-w-[1200px] mx-auto px-6">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center mb-24">
+<div>
+<span class="text-brushed-champagne font-label-lg text-sm uppercase tracking-[0.3em] mb-6 block font-medium">Blueprint</span>
+<h2 class="font-headline-xl text-headline-xl text-midnight-navy mb-8">Strategic Blueprint</h2>
+<p class="sans-premium text-on-surface-variant text-xl leading-relaxed mb-12 font-light">
+                    Diseñamos la infraestructura invisible que sostiene su crecimiento. Nuestro blueprint no solo organiza palabras, sino que estructura la autoridad necesaria para dominar mercados competitivos mediante arquitectura de datos y narrativa de alto impacto.
+                </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+<div class="p-8 bg-pure-white border border-black/5 shadow-sm group hover:shadow-xl transition-all duration-500">
+<h4 class="font-headline-md text-xl text-midnight-navy mb-3">Narrative Architecture</h4>
+<p class="font-body-md text-sm text-on-surface-variant/70">Cimentamos el núcleo del mensaje bajo principios de psicología cognitiva.</p>
+</div>
+<div class="p-8 bg-pure-white border border-black/5 shadow-sm group hover:shadow-xl transition-all duration-500">
+<h4 class="font-headline-md text-xl text-midnight-navy mb-3">Channel Optimization</h4>
+<p class="font-body-md text-sm text-on-surface-variant/70">Distribución multicanal calibrada para máxima eficiencia de alcance.</p>
+</div>
+<div class="p-8 bg-pure-white border border-black/5 shadow-sm group hover:shadow-xl transition-all duration-500">
+<h4 class="font-headline-md text-xl text-midnight-navy mb-3">Authority Scaling</h4>
+<p class="font-body-md text-sm text-on-surface-variant/70">Modelos de crecimiento diseñados para elevar el posicionamiento orgánico.</p>
+</div>
+<div class="p-8 bg-pure-white border border-black/5 shadow-sm group hover:shadow-xl transition-all duration-500">
+<h4 class="font-headline-md text-xl text-midnight-navy mb-3">Performance Analytics</h4>
+<p class="font-body-md text-sm text-on-surface-variant/70">Auditoría constante de KPIs para refinamiento en tiempo real.</p>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -inset-4 bg-brushed-champagne/10 blur-3xl rounded-full"></div>
+<img alt="Strategic Content Blueprint Architecture" class="relative z-10 w-full shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none">
+<div class="w-32 h-32 border border-brushed-champagne/30 rounded-full flex items-center justify-center animate-pulse">
+<span class="material-symbols-outlined text-brushed-champagne text-4xl">architecture</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Gated Portfolio -->
+<section class="py-[140px] bg-black overflow-hidden" id="portfolio">
+<div class="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<div class="max-w-2xl">
+<span class="text-brushed-champagne font-label-lg text-sm uppercase tracking-[0.2em] mb-6 block font-medium">Client Success</span>
+<h2 class="font-headline-xl text-headline-xl text-pure-white">Muestras de Trabajo</h2>
+<p class="sans-premium text-silk-grey/60 text-lg mt-6 font-light">Acceda a muestras reales de nuestro trabajo. Mantenemos la confidencialidad de nuestros clientes premium mediante acceso controlado.</p>
+</div>
+<button class="border-2 border-brushed-champagne text-brushed-champagne px-10 py-5 font-label-lg text-sm uppercase tracking-[0.2em] hover:bg-brushed-champagne hover:text-black transition-all duration-500 font-bold">
+            SOLICITAR PORTAFOLIO COMPLETO
+        </button>
+</div>
+<div class="relative w-full overflow-hidden py-10">
+<div class="marquee-track gap-8">
+<div class="w-[400px] flex-shrink-0 group relative overflow-hidden aspect-[4/5] bg-neutral-900 border border-white/5">
+<img alt="Luxury digital interface" class="w-full h-full object-cover gated-blur" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOut3u_oHFNSNuLXabLXB4lGl6NwDtoUxZrcusIxfXZT2vJr4J2Kievm4l-1qtSkXjHYghDiLah8wUt1UNiWnVlivbyMJbOpR5hBOBx3GUZuz2OivbklFfnthm0boM7zsZwqzS_EZs4An5IhMN3QauBkMGEIVqjR4Or15gycr8LbFGldmXkodOhCMAQdO24oDbtcuIH2mS8auMoTUz7qagHM_ip0zvniS8AO_uEgLnBenl8yqheA1RzZxIh9c6gXTz8cHUa1xtcMhx"/>
+<div class="absolute inset-0 flex flex-col items-center justify-center bg-black/50 group-hover:bg-black/70 transition-all duration-500">
+<span class="material-symbols-outlined text-pure-white text-6xl mb-6 opacity-80" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span class="text-silk-grey font-label-md uppercase tracking-[0.3em] font-medium">Investment Group</span>
+</div>
+</div>
+<div class="w-[400px] flex-shrink-0 group relative overflow-hidden aspect-[4/5] bg-neutral-900 border border-white/5">
+<img alt="Corporate strategy document" class="w-full h-full object-cover gated-blur" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAewvcsUzzsMBFXkX3cxWjMdC7fXTdtzt3DLjsLWgu8VV0snA02SiCgVRkHG_TRRUndh8ZMByQKxw4bUCefkOVPxSanPYMfUBAeIoaAtJ4hQXzEZAraYDgqHsXU0lzvvgS0UL_NS-ex2FrfKLSojBPRMmqLJKugegyaZftUY1Zwa27r15n810OxXgZf-caOZ3FczqaeIrWLtnVUPDEaPO06TPixI-Fri0RHGgNfXwlmom1ivb1c2yiCG29Aj3txv98PNv_WJZ-lBbk_"/>
+<div class="absolute inset-0 flex flex-col items-center justify-center bg-black/50 group-hover:bg-black/70 transition-all duration-500">
+<span class="material-symbols-outlined text-pure-white text-6xl mb-6 opacity-80" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span class="text-silk-grey font-label-md uppercase tracking-[0.3em] font-medium">Wealth Management</span>
+</div>
+</div>
+<div class="w-[400px] flex-shrink-0 group relative overflow-hidden aspect-[4/5] bg-neutral-900 border border-white/5">
+<img alt="Branding project" class="w-full h-full object-cover gated-blur" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWrYvpGk6tkiwZik-mE8u-JBII2wnTel2U3g3NWQaB7dDSyAnI4oD9NRf0VyDUh5OEB_TyJOy8tq4_u7EkFbVrtynzMnEkT_J5Jm20pw6Nr8Z8G1JPbFPWwggwfBu1NCqKEUt1jrTRl8xb16jDl0wuvfza8TnMEmXc1bzVZqpN9t_e2-R32fa6pFYtv8SaTtnNw1p6kL2aZFEl9bHNsMcTOD_ko-c5xnwPYZg0flad0xOcd0eBwuuTCExQLeMJgt8UEwbQS1xuho_l"/>
+<div class="absolute inset-0 flex flex-col items-center justify-center bg-black/50 group-hover:bg-black/70 transition-all duration-500">
+<span class="material-symbols-outlined text-pure-white text-6xl mb-6 opacity-80" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span class="text-silk-grey font-label-md uppercase tracking-[0.3em] font-medium">Real Estate Luxury</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. FAQ Section -->
+<section class="py-[140px] bg-pure-white" id="faq">
+<div class="max-w-[850px] mx-auto px-6">
+<div class="text-center mb-24">
+<span class="text-brushed-champagne font-label-lg text-sm uppercase tracking-[0.3em] mb-6 block font-medium">Knowledge Base</span>
+<h2 class="font-headline-xl text-headline-xl text-midnight-navy">Resolviendo Sus Dudas</h2>
+</div>
+<div class="space-y-6" x-data="{ openFaq: null }">
+<div class="border-b border-silk-grey pb-4">
+<button @click="openFaq === 1 ? openFaq = null : openFaq = 1" class="w-full flex justify-between items-center py-8 text-left group">
+<span class="font-headline-md text-2xl text-midnight-navy group-hover:text-brushed-champagne transition-colors">¿Qué hace diferente a Portfolio Contenido?</span>
+<span :class="openFaq === 1 ? 'rotate-180' : ''" class="material-symbols-outlined text-brushed-champagne transition-transform duration-300">expand_more</span>
+</button>
+<div class="pb-10" x-cloak="" x-collapse="" x-show="openFaq === 1">
+<p class="sans-premium text-on-surface-variant text-lg leading-relaxed font-light">
+                        Nos diferenciamos porque anteponemos la escucha al entregable. No producimos contenido genérico: primero entendemos su negocio, su audiencia y sus objetivos. Cada pieza nace de una estrategia diseñada a su medida.
+                    </p>
+</div>
+</div>
+<div class="border-b border-silk-grey pb-4">
+<button @click="openFaq === 2 ? openFaq = null : openFaq = 2" class="w-full flex justify-between items-center py-8 text-left group">
+<span class="font-headline-md text-2xl text-midnight-navy group-hover:text-brushed-champagne transition-colors">¿Producen contenido en inglés y español?</span>
+<span :class="openFaq === 2 ? 'rotate-180' : ''" class="material-symbols-outlined text-brushed-champagne transition-transform duration-300">expand_more</span>
+</button>
+<div class="pb-10" x-cloak="" x-collapse="" x-show="openFaq === 2">
+<p class="sans-premium text-on-surface-variant text-lg leading-relaxed font-light">
+                        Sí. El bilingüismo técnico es una de nuestras fortalezas. Producimos y supervisamos activos en español e inglés con el mismo nivel de rigor, facilitando la expansión a mercados internacionales.
+                    </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. Contact Section -->
+<section class="py-[140px] bg-silk-grey" id="contact">
+<div class="max-w-[1200px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-32">
+<div>
+<span class="text-brushed-champagne font-label-lg text-sm uppercase tracking-[0.3em] mb-6 block font-medium">Consultation</span>
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-midnight-navy mb-10">Conversemos sobre su Proyecto</h2>
+<div class="space-y-10 mt-16">
+<div class="flex items-start gap-8">
+<span class="material-symbols-outlined text-brushed-champagne text-3xl mt-1">alternate_email</span>
+<div>
+<p class="font-label-lg text-xs uppercase tracking-[0.2em] text-midnight-navy/40 mb-2 font-bold">Direct Email</p>
+<p class="font-headline-md text-2xl text-midnight-navy">hola@portfoliocontenido.com</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-pure-white p-14 shadow-2xl">
+<form class="space-y-10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+<div class="flex flex-col gap-3">
+<label class="font-label-md text-xs uppercase tracking-[0.2em] text-midnight-navy/60 font-bold">Nombre</label>
+<input class="border-0 border-b border-silk-grey focus:ring-0 focus:border-brushed-champagne px-0 py-4 sans-premium bg-transparent text-lg" placeholder="Julián Martínez" type="text"/>
+</div>
+<div class="flex flex-col gap-3">
+<label class="font-label-md text-xs uppercase tracking-[0.2em] text-midnight-navy/60 font-bold">Correo Corporativo</label>
+<input class="border-0 border-b border-silk-grey focus:ring-0 focus:border-brushed-champagne px-0 py-4 sans-premium bg-transparent text-lg" placeholder="julian@empresa.com" type="email"/>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<label class="font-label-md text-xs uppercase tracking-[0.2em] text-midnight-navy/60 font-bold">Mensaje</label>
+<textarea class="border-0 border-b border-silk-grey focus:ring-0 focus:border-brushed-champagne px-0 py-4 sans-premium bg-transparent resize-none text-lg" placeholder="Describa brevemente su proyecto..." rows="4"></textarea>
+</div>
+<button class="w-full bg-midnight-navy text-pure-white py-7 font-label-lg text-sm uppercase tracking-[0.3em] font-bold hover:bg-black transition-all shadow-xl" type="submit">
+                    ENVIAR CONSULTA
+                </button>
+</form>
+</div>
+</div>
+</section>
+<!-- 7. Footer -->
+<footer class="bg-black border-t border-white/5">
+<div class="max-w-[1200px] mx-auto px-6 py-[120px] flex flex-col md:flex-row justify-between items-start gap-12">
+<div class="flex flex-col gap-10 max-w-sm">
+<h3 class="font-headline-md text-2xl text-brushed-champagne">PORTFOLIO CONTENIDO</h3>
+<p class="font-label-md text-[11px] uppercase tracking-[0.2em] text-silk-grey/40 leading-relaxed">
+                © 2024 PORTFOLIO CONTENIDO.<br/>STRATEGIC EXCELLENCE IN CONTENT.
+            </p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-20">
+<div class="flex flex-col gap-6">
+<h4 class="font-label-lg text-pure-white tracking-[0.2em] uppercase mb-4 text-[13px] font-bold">Focus</h4>
+<a class="font-label-md text-[11px] uppercase tracking-widest text-silk-grey/30 hover:text-brushed-champagne transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-md text-[11px] uppercase tracking-widest text-silk-grey/30 hover:text-brushed-champagne transition-colors" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-6">
+<h4 class="font-label-lg text-pure-white tracking-[0.2em] uppercase mb-4 text-[13px] font-bold">Connect</h4>
+<a class="font-label-md text-[11px] uppercase tracking-widest text-silk-grey/30 hover:text-brushed-champagne transition-colors" href="#">LinkedIn</a>
+<a class="font-label-md text-[11px] uppercase tracking-widest text-silk-grey/30 hover:text-brushed-champagne transition-colors" href="#">Contact Us</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

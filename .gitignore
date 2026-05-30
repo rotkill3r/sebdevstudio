@@ -1,0 +1,16 @@
+# OS
+Thumbs.db
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Python
+__pycache__/
+*.pyc
+.env
+
+# Project specific
+screen.png
