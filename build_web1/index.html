@@ -15,6 +15,7 @@
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6JMS0QWPZ0"></script>
 <script>
@@ -30,12 +31,45 @@
   "@type": "Organization",
   "name": "Seb_DevStudio",
   "url": "https://sebdevstudio.vercel.app",
-  "description": "Desarrollo web moderno con subagentes de IA. 3 servicios integrados: autónomo, AI tools, consultoría.",
+  "logo": "https://sebdevstudio.vercel.app/favicon.svg",
+  "description": "Desarrollo web moderno con subagentes de IA. 3 servicios integrados: aut\u00f3nomo, AI tools, consultor\u00eda.",
   "founder": { "@type": "Person", "name": "Sebastian Velasquez" },
   "offers": [
-    { "@type": "Service", "name": "Desarrollo Autónomo con Subagentes", "description": "5 subagentes de IA construyen tu proyecto en paralelo. Pipeline CI/CD automatizado." },
-    { "@type": "Service", "name": "Web + AI Tools", "description": "Prototipos funcionales con Lovable, Bolt, V0 y Cursor. Deploy en 3-7 días." },
-    { "@type": "Service", "name": "Consultoría Técnica", "description": "Auditoría de código, arquitectura, migración y optimización de CI/CD." }
+    { "@type": "Service", "name": "Desarrollo Aut\u00f3nomo con Subagentes", "description": "5 subagentes de IA construyen tu proyecto en paralelo. Pipeline CI/CD automatizado." },
+    { "@type": "Service", "name": "Web + AI Tools", "description": "Prototipos funcionales con Lovable, Bolt, V0 y Cursor. Deploy en 3-7 d\u00edas." },
+    { "@type": "Service", "name": "Consultor\u00eda T\u00e9cnica", "description": "Auditor\u00eda de c\u00f3digo, arquitectura, migraci\u00f3n y optimizaci\u00f3n de CI/CD." }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "\u00bfC\u00f3mo funciona el desarrollo con subagentes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Los 5 subagentes trabajan en paralelo: Analyzer define el plan, Architect dise\u00f1a la arquitectura, Builder escribe el c\u00f3digo, CI verifica calidad, Deploy publica. T\u00fa revisas y apruebas cada cambio antes de integrarlo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "\u00bfQu\u00e9 herramientas de AI usan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Integramos Lovable, Bolt, V0 y Cursor seg\u00fan el proyecto. Somos integradores especializados, no creadores de dichas herramientas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "\u00bfQu\u00e9 incluye el servicio de Consultor\u00eda T\u00e9cnica?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Auditor\u00eda de c\u00f3digo existente, definici\u00f3n de arquitectura objetivo, plan de migraci\u00f3n detallado, y recomendaciones de stack con justificaci\u00f3n t\u00e9cnica y de negocio."
+      }
+    }
   ]
 }
 </script>
@@ -74,6 +108,8 @@ tailwind.config = {
 </head>
   <body class="bg-surface-light text-text-primary font-body selection:bg-brand-indigo/20 overflow-x-hidden" x-data="app()">
 
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:px-4 focus:py-3 focus:bg-brand-indigo focus:text-white focus:rounded focus:text-sm focus:font-bold">Saltar al contenido</a>
+
 <!-- ===== HEADER ===== -->
 <header
   x-data="{ scrolled: false, mobileOpen: false }"
@@ -98,25 +134,26 @@ tailwind.config = {
         <span class="material-symbols-outlined text-xl" x-show="!darkMode">dark_mode</span>
         <span class="material-symbols-outlined text-xl" x-show="darkMode" x-cloak>light_mode</span>
       </button>
-      <a class="inline-block bg-brand-indigo dark:bg-brand-cyan text-white px-6 py-2.5 font-body text-xs font-bold uppercase tracking-wider hover:bg-deep-indigo dark:hover:bg-cyan-700 transition-all duration-300" href="#contact">Iniciar Proyecto</a>
+      <a class="hidden md:inline-block bg-brand-indigo dark:bg-brand-cyan text-white px-6 py-3 font-body text-xs font-bold uppercase tracking-wider hover:bg-deep-indigo dark:hover:bg-cyan-700 transition-all duration-300" href="#contact">Iniciar Proyecto</a>
       <button @click="mobileOpen = !mobileOpen" class="md:hidden text-text-primary dark:text-text-on-dark p-2">
         <span class="material-symbols-outlined text-2xl" x-text="mobileOpen ? 'close' : 'menu'">menu</span>
       </button>
     </div>
   </div>
   <div x-cloak x-show="mobileOpen" x-collapse class="md:hidden bg-white dark:bg-surface-dark border-t border-black/5 dark:border-white/5">
-    <div class="px-6 py-8 flex flex-col gap-5">
+    <div class="px-6 py-8 flex flex-col gap-4">
       <a @click="mobileOpen = false" class="font-body text-sm font-medium text-text-secondary dark:text-text-muted-dark hover:text-brand-indigo dark:hover:text-brand-cyan" href="#services">Servicios</a>
       <a @click="mobileOpen = false" class="font-body text-sm font-medium text-text-secondary dark:text-text-muted-dark hover:text-brand-indigo dark:hover:text-brand-cyan" href="#agents">Subagentes</a>
       <a @click="mobileOpen = false" class="font-body text-sm font-medium text-text-secondary dark:text-text-muted-dark hover:text-brand-indigo dark:hover:text-brand-cyan" href="#wizard">Cuestionario</a>
       <a @click="mobileOpen = false" class="font-body text-sm font-medium text-text-secondary dark:text-text-muted-dark hover:text-brand-indigo dark:hover:text-brand-cyan" href="#portfolio">Portfolio</a>
       <a @click="mobileOpen = false" class="font-body text-sm font-medium text-text-secondary dark:text-text-muted-dark hover:text-brand-indigo dark:hover:text-brand-cyan" href="#contact">Contacto</a>
+      <a @click="mobileOpen = false" class="block bg-brand-indigo/10 dark:bg-brand-cyan/10 text-brand-indigo dark:text-brand-cyan text-center font-body text-sm font-bold px-4 py-3 mt-2 rounded" href="#contact">Iniciar Proyecto</a>
     </div>
   </div>
 </header>
 
 <!-- ===== HERO ===== -->
-<section class="relative min-h-[90vh] flex items-center bg-surface-light dark:bg-surface-dark pt-20 overflow-hidden">
+<section id="main" class="relative min-h-[90vh] flex items-center bg-surface-light dark:bg-surface-dark pt-20 overflow-hidden">
   <div class="absolute inset-0 pointer-events-none">
     <div class="absolute inset-0 bg-gradient-to-br from-brand-indigo/5 via-transparent to-brand-cyan/5 dark:from-brand-indigo/10 dark:via-transparent dark:to-brand-cyan/10"></div>
     <div class="absolute top-20 left-10 w-64 h-64 bg-brand-indigo/10 dark:bg-brand-indigo/20 rounded-full blur-3xl"></div>
@@ -128,7 +165,7 @@ tailwind.config = {
         <span class="w-1.5 h-1.5 rounded-full bg-brand-indigo dark:bg-brand-cyan animate-pulse"></span>
         <span class="text-brand-indigo dark:text-brand-cyan font-mono text-[10px] font-semibold uppercase tracking-widest">Desarrollo Moderno + AI Tools</span>
       </div>
-      <h1 class="font-display font-bold text-4xl md:text-6xl leading-tight text-text-primary dark:text-text-on-dark mb-5 tracking-tight max-w-4xl reveal visible">
+      <h1 class="font-display font-bold text-3xl sm:text-4xl md:text-6xl leading-tight text-text-primary dark:text-text-on-dark mb-5 tracking-tight max-w-4xl reveal visible">
         <span class="block text-text-secondary dark:text-text-muted-dark font-body text-xs uppercase tracking-widest mb-5 font-medium">Sebastian Velasquez</span>
         De la idea al deploy<br/>
         <span class="text-brand-indigo dark:text-brand-cyan">en 2 a 4 semanas</span>
@@ -143,15 +180,15 @@ tailwind.config = {
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 pt-16 mt-16 border-t border-black/10 dark:border-white/10 w-full max-w-3xl mx-auto reveal-up">
         <div class="flex flex-col items-center">
           <span class="text-brand-indigo dark:text-brand-cyan font-display font-bold text-3xl md:text-4xl mb-1">3</span>
-          <span class="text-text-secondary dark:text-text-muted-dark font-body text-[10px] uppercase tracking-widest font-medium">Servicios Integrados</span>
+          <span class="text-text-secondary dark:text-text-muted-dark font-body text-xs uppercase tracking-widest font-medium">Servicios Integrados</span>
         </div>
         <div class="flex flex-col items-center">
           <span class="text-brand-indigo dark:text-brand-cyan font-display font-bold text-3xl md:text-4xl mb-1">5</span>
-          <span class="text-text-secondary dark:text-text-muted-dark font-body text-[10px] uppercase tracking-widest font-medium">Subagentes de IA</span>
+          <span class="text-text-secondary dark:text-text-muted-dark font-body text-xs uppercase tracking-widest font-medium">Subagentes de IA</span>
         </div>
         <div class="flex flex-col items-center">
           <span class="text-brand-indigo dark:text-brand-cyan font-display font-bold text-3xl md:text-4xl mb-1">4</span>
-          <span class="text-text-secondary dark:text-text-muted-dark font-body text-[10px] uppercase tracking-widest font-medium">Fases de Diagn&oacute;stico</span>
+          <span class="text-text-secondary dark:text-text-muted-dark font-body text-xs uppercase tracking-widest font-medium">Fases de Diagn&oacute;stico</span>
         </div>
       </div>
     </div>
@@ -177,17 +214,17 @@ tailwind.config = {
           <span class="font-mono text-4xl font-bold text-black/5 dark:text-white/5 absolute top-3 right-5" x-text="'0' + (idx + 1)"></span>
           <span class="material-symbols-outlined text-2xl mb-4" :style="'color:' + svc.color" x-text="svc.icon"></span>
           <h3 class="font-body font-semibold text-xl text-text-primary dark:text-text-on-dark mb-2 leading-tight" x-text="svc.name"></h3>
-          <p class="font-body text-xs text-text-secondary dark:text-text-muted-dark leading-relaxed mb-5 flex-grow" x-text="svc.description"></p>
+          <p class="font-body text-sm text-text-secondary dark:text-text-muted-dark leading-relaxed mb-5 flex-grow" x-text="svc.description"></p>
           <div class="space-y-2 mb-5">
             <template x-for="(feat, fIdx) in svc.features" :key="fIdx">
               <div class="flex items-start gap-2">
                 <span class="material-symbols-outlined text-xs mt-0.5" :style="'color:' + svc.color">check_circle</span>
-                <span class="font-body text-[11px] text-text-secondary dark:text-text-muted-dark/80" x-text="feat"></span>
+                <span class="font-body text-xs md:text-[11px] text-text-secondary dark:text-text-muted-dark/80" x-text="feat"></span>
               </div>
             </template>
           </div>
           <div class="pt-5 border-t border-black/5 dark:border-white/5 mt-auto">
-            <p class="font-mono text-[10px] font-bold uppercase tracking-wider mb-2" :style="'color:' + svc.color" x-text="'Desde ' + svc.price"></p>
+            <p class="font-mono text-xs md:text-[10px] font-bold uppercase tracking-wider mb-2" :style="'color:' + svc.color" x-text="'Desde ' + svc.price"></p>
             <a href="#wizard" class="inline-flex items-center gap-1.5 font-body text-xs font-medium transition-all duration-300 group/cta"
                :style="'color:' + svc.color">
               Empezar <span class="material-symbols-outlined text-sm transition-transform duration-300 group-hover/cta:translate-x-1">arrow_forward</span>
@@ -220,7 +257,7 @@ tailwind.config = {
       </span>
       <span class="font-body text-xs text-text-secondary dark:text-text-muted-dark">Full satisfaction garantizada</span>
     </div>
-    <span class="font-mono text-[9px] uppercase tracking-widest text-text-secondary/30 dark:text-text-muted-dark/30 px-3 py-1 border border-black/5 dark:border-white/5 rounded-full">Pr&oacute;ximamente</span>
+    <span class="font-mono text-[10px] uppercase tracking-widest text-text-secondary/30 dark:text-text-muted-dark/30 px-3 py-1 border border-black/5 dark:border-white/5 rounded-full">Pr&oacute;ximamente</span>
   </div>
 </div>
 
@@ -239,9 +276,9 @@ tailwind.config = {
             <span class="font-mono text-2xl font-bold text-amber-accent/20 group-hover:text-amber-accent/40 transition-colors block mb-2" x-text="agent.num"></span>
             <span class="material-symbols-outlined text-2xl text-amber-accent/50 block mb-2" x-text="agent.icon"></span>
             <h3 class="font-body font-semibold text-sm text-text-primary dark:text-text-on-dark mb-1" x-text="agent.name"></h3>
-            <p class="font-body text-[10px] text-text-secondary dark:text-text-muted-dark leading-relaxed mb-3" x-text="agent.what"></p>
+            <p class="font-body text-xs md:text-[10px] text-text-secondary dark:text-text-muted-dark leading-relaxed mb-3" x-text="agent.what"></p>
             <div class="pt-3 border-t border-black/5 dark:border-white/5">
-              <span class="font-mono text-[9px] font-semibold uppercase tracking-wider text-amber-accent/60" x-text="'Output: ' + agent.output"></span>
+              <span class="font-mono text-[10px] md:text-[9px] font-semibold uppercase tracking-wider text-amber-accent/60" x-text="'Output: ' + agent.output"></span>
             </div>
           </div>
           <div x-show="idx < agents.length - 1" class="hidden md:flex items-center justify-center w-8 flex-shrink-0">
@@ -268,7 +305,7 @@ tailwind.config = {
     </div>
     <div class="max-w-2xl mx-auto bg-white dark:bg-surface-mid border border-black/5 dark:border-white/5 p-6 md:p-8 shadow-lg reveal-up">
       <!-- Steps Indicator -->
-      <div class="flex items-center justify-between mb-8">
+      <div class="flex items-center justify-between mb-8 overflow-x-auto scroll-snap-x -mx-6 px-6" style="scroll-snap-type:x mandatory;scroll-padding:0 1.5rem">
         <template x-for="(s, idx) in wizardSteps" :key="idx">
           <div class="flex items-center">
             <div class="flex items-center gap-3">
@@ -279,7 +316,7 @@ tailwind.config = {
               </div>
               <span class="hidden md:block font-body text-xs font-medium text-text-secondary dark:text-text-muted-dark/70" x-text="s.label"></span>
             </div>
-            <div x-show="idx < wizardSteps.length - 1" class="w-12 md:w-24 h-px bg-black/10 dark:bg-white/10 ml-3"></div>
+            <div x-show="idx < wizardSteps.length - 1" class="w-12 md:w-24 h-px bg-black/10 dark:bg-white/10 ml-3 flex-shrink-0"></div>
           </div>
         </template>
       </div>
@@ -304,7 +341,7 @@ tailwind.config = {
                   <template x-if="q.type === 'radio'">
                     <div class="flex flex-wrap gap-2">
                       <template x-for="opt in q.options" :key="opt">
-                        <label class="flex items-center gap-1.5 px-3 py-2 border border-black/10 dark:border-white/10 cursor-pointer transition-all duration-200"
+                        <label class="flex items-center gap-1.5 px-3 py-2.5 border border-black/10 dark:border-white/10 cursor-pointer transition-all duration-200"
                                :class="wizardData[q.field] === opt ? 'border-brand-indigo dark:border-brand-cyan bg-brand-indigo/5 dark:bg-brand-cyan/10' : 'hover:border-black/20 dark:hover:border-white/20'">
                           <input type="radio" :name="q.field" :value="opt" x-model="wizardData[q.field]" class="sr-only">
                           <span class="font-body text-xs text-text-primary dark:text-text-on-dark" x-text="opt"></span>
@@ -328,10 +365,10 @@ tailwind.config = {
           <span class="material-symbols-outlined text-sm">arrow_back</span> Anterior
         </button>
         <div x-show="wizardStep === 1"></div>
-        <button x-show="wizardStep < 4" @click="wizardStep++" class="bg-brand-indigo dark:bg-brand-cyan text-white px-6 py-2.5 font-body text-xs font-bold uppercase tracking-wider hover:bg-deep-indigo dark:hover:bg-cyan-700 transition-all duration-300 flex items-center gap-1">
+        <button x-show="wizardStep < 4" @click="wizardStep++" class="bg-brand-indigo dark:bg-brand-cyan text-white px-6 py-3 font-body text-xs font-bold uppercase tracking-wider hover:bg-deep-indigo dark:hover:bg-cyan-700 transition-all duration-300 flex items-center gap-1">
           Siguiente <span class="material-symbols-outlined text-sm">arrow_forward</span>
         </button>
-        <button x-show="wizardStep === 4" @click="submitWizard" :disabled="submitting" class="bg-brand-indigo dark:bg-brand-cyan text-white px-6 py-2.5 font-body text-xs font-bold uppercase tracking-wider hover:bg-deep-indigo dark:hover:bg-cyan-700 transition-all duration-300 flex items-center gap-1" :class="submitting ? 'opacity-50 cursor-not-allowed' : ''">
+        <button x-show="wizardStep === 4" @click="submitWizard" :disabled="submitting" class="bg-brand-indigo dark:bg-brand-cyan text-white px-6 py-3 font-body text-xs font-bold uppercase tracking-wider hover:bg-deep-indigo dark:hover:bg-cyan-700 transition-all duration-300 flex items-center gap-1" :class="submitting ? 'opacity-50 cursor-not-allowed' : ''">
           <span x-show="!submitting">Enviar Diagn&oacute;stico</span>
           <span x-show="submitting">Enviando...</span>
           <span class="material-symbols-outlined text-sm">send</span>
@@ -354,60 +391,13 @@ tailwind.config = {
   <div class="max-w-[1200px] mx-auto px-6">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
       <template x-for="(item, idx) in portfolioItems" :key="idx">
-        <div class="group relative overflow-hidden h-[260px] md:h-[300px] border border-black/5 dark:border-white/5 bg-surface-light dark:bg-surface-dark cursor-pointer">
-          <div class="absolute inset-0 transition-transform duration-500 group-hover:scale-105">
-            <svg class="w-full h-full" viewBox="0 0 400 500" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-              <template x-if="item.pattern === 'circuit'">
-                <g stroke="currentColor" stroke-width="1" fill="none" class="text-brand-indigo/15 dark:text-brand-cyan/15">
-                  <path d="M0 250 L100 250 L100 100 L200 100 L200 300 L300 300 L300 150 L400 150"/>
-                  <circle cx="100" cy="250" r="4" class="text-brand-indigo/30 dark:text-brand-cyan/30"/>
-                  <circle cx="200" cy="100" r="4" class="text-brand-indigo/30 dark:text-brand-cyan/30"/>
-                  <circle cx="300" cy="300" r="4" class="text-brand-indigo/30 dark:text-brand-cyan/30"/>
-                </g>
-              </template>
-              <template x-if="item.pattern === 'wave'">
-                <g stroke="currentColor" stroke-width="1" fill="none" class="text-brand-indigo/15 dark:text-brand-cyan/15">
-                  <path d="M0 300 Q100 200 200 300 T400 300"/>
-                  <path d="M0 350 Q100 250 200 350 T400 350"/>
-                  <path d="M0 400 Q100 300 200 400 T400 400"/>
-                </g>
-              </template>
-              <template x-if="item.pattern === 'prism'">
-                <g stroke="currentColor" stroke-width="1" fill="none" class="text-brand-indigo/15 dark:text-brand-cyan/15">
-                  <polygon points="200,50 350,200 200,350 50,200"/>
-                  <polygon points="200,100 300,200 200,300 100,200"/>
-                  <polygon points="200,150 250,200 200,250 150,200"/>
-                </g>
-              </template>
-              <template x-if="item.pattern === 'pulse'">
-                <g stroke="currentColor" stroke-width="1" fill="none" class="text-brand-indigo/15 dark:text-brand-cyan/15">
-                  <circle cx="200" cy="250" r="40"/>
-                  <circle cx="200" cy="250" r="80"/>
-                  <circle cx="200" cy="250" r="120"/>
-                  <circle cx="200" cy="250" r="160"/>
-                </g>
-              </template>
-              <template x-if="item.pattern === 'dots'">
-                <g fill="currentColor" class="text-brand-indigo/15 dark:text-brand-cyan/15">
-                  <circle cx="50" cy="50" r="2"/><circle cx="150" cy="50" r="2"/><circle cx="250" cy="50" r="2"/><circle cx="350" cy="50" r="2"/>
-                  <circle cx="50" cy="150" r="2"/><circle cx="150" cy="150" r="2"/><circle cx="250" cy="150" r="2"/><circle cx="350" cy="150" r="2"/>
-                  <circle cx="50" cy="250" r="2"/><circle cx="150" cy="250" r="2"/><circle cx="250" cy="250" r="2"/><circle cx="350" cy="250" r="2"/>
-                  <circle cx="50" cy="350" r="2"/><circle cx="150" cy="350" r="2"/><circle cx="250" cy="350" r="2"/><circle cx="350" cy="350" r="2"/>
-                  <circle cx="50" cy="450" r="2"/><circle cx="150" cy="450" r="2"/><circle cx="250" cy="450" r="2"/><circle cx="350" cy="450" r="2"/>
-                </g>
-              </template>
-              <template x-if="item.pattern === 'grid'">
-                <g stroke="currentColor" stroke-width="1" fill="none" class="text-brand-indigo/15 dark:text-brand-cyan/15">
-                  <path d="M100 0 L100 500 M200 0 L200 500 M300 0 L300 500"/>
-                  <path d="M0 100 L400 100 M0 200 L400 200 M0 300 L400 300 M0 400 L400 400"/>
-                </g>
-              </template>
-            </svg>
-          </div>
-          <div class="absolute inset-0 bg-gradient-to-t from-white/95 via-white/40 to-transparent dark:from-surface-mid/95 dark:via-surface-mid/40 dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5">
-            <span class="font-mono text-[10px] font-bold uppercase tracking-widest text-brand-indigo dark:text-brand-cyan mb-1" x-text="item.tag"></span>
+        <div class="group relative overflow-hidden aspect-[3/4] md:aspect-auto md:h-[300px] border border-black/5 dark:border-white/5 bg-surface-light dark:bg-surface-dark cursor-pointer">
+          <img :src="item.image" alt="" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-white/95 via-white/40 to-transparent dark:from-surface-mid/95 dark:via-surface-mid/40 dark:to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5">
+            <span class="font-mono text-xs md:text-[10px] font-bold uppercase tracking-widest text-brand-indigo dark:text-brand-cyan mb-1" x-text="item.tag"></span>
             <h3 class="font-body font-semibold text-sm text-text-primary dark:text-text-on-dark mb-0.5" x-text="item.name"></h3>
-            <p class="font-body text-[11px] text-text-secondary dark:text-text-muted-dark" x-text="item.desc"></p>
+            <p class="font-body text-xs md:text-[11px] text-text-secondary dark:text-text-muted-dark" x-text="item.desc"></p>
+            <span class="font-mono text-[10px] text-text-secondary/40 dark:text-text-muted-dark/40 mt-1">Template: HTML5 UP (CC)</span>
           </div>
           <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
             <span class="material-symbols-outlined text-3xl text-brand-indigo/30 dark:text-brand-cyan/30 group-hover:opacity-0 transition-opacity duration-300" x-text="idx === 0 ? 'dashboard' : idx === 1 ? 'auto_awesome' : idx === 2 ? 'analytics' : idx === 3 ? 'devices' : idx === 4 ? 'payments' : idx === 5 ? 'task_alt' : idx === 6 ? 'person' : 'chat'"></span>
@@ -428,13 +418,13 @@ tailwind.config = {
     <div class="max-w-2xl mx-auto space-y-px reveal-up">
       <template x-for="(faq, idx) in faqs" :key="idx">
         <div class="bg-white dark:bg-surface-mid border border-black/5 dark:border-white/5 transition-all duration-300" :class="faq.open ? 'shadow-sm' : ''">
-          <button @click="faq.open = !faq.open" class="w-full flex items-center justify-between p-5 text-left hover:bg-black/[0.02] dark:hover:bg-white/[0.02] transition-colors cursor-pointer">
+          <button @click="faq.open = !faq.open" class="w-full flex items-center justify-between p-4 md:p-5 text-left hover:bg-black/[0.02] dark:hover:bg-white/[0.02] transition-colors cursor-pointer">
             <span class="font-body font-medium text-sm text-text-primary dark:text-text-on-dark pr-4" x-text="faq.q"></span>
             <span :class="faq.open ? 'rotate-45' : ''" class="material-symbols-outlined text-sm text-brand-indigo dark:text-brand-cyan transition-transform duration-300 flex-shrink-0">add</span>
           </button>
           <div x-cloak x-show="faq.open" x-collapse>
-            <div class="px-5 pb-5">
-              <p class="font-body text-xs text-text-secondary dark:text-text-muted-dark leading-relaxed" x-text="faq.a"></p>
+              <div class="px-4 pb-4 md:px-5 md:pb-5">
+              <p class="font-body text-sm text-text-secondary dark:text-text-muted-dark leading-relaxed" x-text="faq.a"></p>
             </div>
           </div>
         </div>
@@ -485,20 +475,20 @@ tailwind.config = {
           </div>
         </div>
       </div>
-      <div class="bg-surface-light dark:bg-surface-dark p-8 md:p-10 border border-black/5 dark:border-white/5 reveal-right">
-        <form :action="'https://formspree.io/f/' + formspreeID" method="POST" class="space-y-5">
+      <div class="bg-surface-light dark:bg-surface-dark p-6 md:p-8 md:p-10 border border-black/5 dark:border-white/5 reveal-up md:reveal-right">
+        <form @submit.prevent="submitContact($event)" class="space-y-5">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div class="flex flex-col gap-1">
-              <label for="name" class="font-mono text-[10px] font-semibold uppercase tracking-widest text-text-secondary dark:text-text-muted-dark/60">Nombre</label>
+              <label for="name" class="font-mono text-xs font-semibold uppercase tracking-widest text-text-secondary dark:text-text-muted-dark/60">Nombre</label>
               <input id="name" name="name" class="border-0 border-b border-black/10 dark:border-white/10 focus:ring-0 focus:border-brand-indigo dark:focus:border-brand-cyan px-0 py-2.5 font-body bg-transparent text-sm text-text-primary dark:text-text-on-dark placeholder:text-text-secondary/40 dark:placeholder:text-text-muted-dark/40" placeholder="Tu nombre" type="text" required>
             </div>
             <div class="flex flex-col gap-1">
-              <label for="email" class="font-mono text-[10px] font-semibold uppercase tracking-widest text-text-secondary dark:text-text-muted-dark/60">Email</label>
+              <label for="email" class="font-mono text-xs font-semibold uppercase tracking-widest text-text-secondary dark:text-text-muted-dark/60">Email</label>
               <input id="email" name="email" class="border-0 border-b border-black/10 dark:border-white/10 focus:ring-0 focus:border-brand-indigo dark:focus:border-brand-cyan px-0 py-2.5 font-body bg-transparent text-sm text-text-primary dark:text-text-on-dark placeholder:text-text-secondary/40 dark:placeholder:text-text-muted-dark/40" placeholder="email@ejemplo.com" type="email" required>
             </div>
           </div>
           <div class="flex flex-col gap-1">
-            <label for="message" class="font-mono text-[10px] font-semibold uppercase tracking-widest text-text-secondary dark:text-text-muted-dark/60">Mensaje</label>
+            <label for="message" class="font-mono text-xs font-semibold uppercase tracking-widest text-text-secondary dark:text-text-muted-dark/60">Mensaje</label>
             <textarea id="message" name="message" class="border-0 border-b border-black/10 dark:border-white/10 focus:ring-0 focus:border-brand-indigo dark:focus:border-brand-cyan px-0 py-2.5 font-body bg-transparent resize-none text-sm text-text-primary dark:text-text-on-dark placeholder:text-text-secondary/40 dark:placeholder:text-text-muted-dark/40" placeholder="Describe tu proyecto..." rows="2" required></textarea>
           </div>
           <button class="w-full bg-brand-indigo dark:bg-brand-cyan text-white py-3.5 font-body text-xs font-bold uppercase tracking-wider hover:bg-deep-indigo dark:hover:bg-cyan-700 transition-all shadow-md" type="submit">Enviar Mensaje</button>
@@ -543,6 +533,22 @@ tailwind.config = {
   </div>
 </footer>
 
+<!-- ===== BACK TO TOP ===== -->
+<button x-data="{ top: false }" @scroll.window="top = window.pageYOffset > 400" x-show="top" @click="window.scrollTo({top:0,behavior:'smooth'})" x-transition.duration.300ms class="fixed bottom-6 left-6 z-50 w-11 h-11 rounded-full bg-brand-indigo dark:bg-brand-cyan text-white shadow-lg hover:shadow-xl hover:scale-105 transition-all flex items-center justify-center" aria-label="Volver arriba">
+  <span class="material-symbols-outlined text-lg">arrow_upward</span>
+</button>
+
+<!-- ===== TOAST ===== -->
+<div x-show="toast.show" x-transition.duration.300ms class="fixed bottom-6 right-6 z-50 max-w-sm" x-cloak>
+  <div :class="toast.type === 'success' ? 'bg-green-600' : 'bg-red-600'" class="text-white px-5 py-4 shadow-2xl flex items-start gap-3">
+    <span class="material-symbols-outlined text-lg flex-shrink-0" x-text="toast.type === 'success' ? 'check_circle' : 'error'"></span>
+    <div>
+      <p class="font-body text-sm font-semibold" x-text="toast.title"></p>
+      <p class="font-body text-xs mt-0.5 opacity-90" x-text="toast.message"></p>
+    </div>
+  </div>
+</div>
+
 <!-- ===== ALPINE DATA ===== -->
 <script src="js/app.js"></script>
 <script src="js/scroll-reveal.js"></script>
@@ -552,9 +558,35 @@ document.addEventListener('alpine:init', () => {
     darkMode: false,
     wizardStep: 1,
     formspreeID: 'xeedwona',
+    toast: { show: false, type: 'success', title: '', message: '' },
+
+    showToast(type, title, message) {
+      this.toast = { show: true, type, title, message };
+      setTimeout(() => { this.toast.show = false; }, 4000);
+    },
+
+    submitContact(event) {
+      const form = event.target;
+      const data = new FormData(form);
+      const payload = { type: 'contact' };
+      data.forEach((val, key) => { payload[key] = val; });
+      this.showToast('success', 'Enviando mensaje...', 'Un momento por favor.');
+      fetch('https://formspree.io/f/' + this.formspreeID, {
+        method: 'POST', body: JSON.stringify(payload), headers: { 'Content-Type': 'application/json' }
+      }).then(() => {
+        this.showToast('success', 'Mensaje enviado', 'Te responderemos en menos de 24h.');
+        form.reset();
+      }).catch(() => {
+        this.showToast('error', 'Error al enviar', 'Escribe directamente a sebpowerop@hotmail.com');
+      });
+    },
+
     init() {
+      const stored = localStorage.getItem('darkMode');
+      if (stored !== null) this.darkMode = stored === 'true';
       this.$watch('darkMode', val => {
         document.documentElement.classList.toggle('dark', val);
+        localStorage.setItem('darkMode', val);
       });
       if (this.darkMode) document.documentElement.classList.add('dark');
     },
@@ -648,25 +680,25 @@ document.addEventListener('alpine:init', () => {
         method: 'POST', body: JSON.stringify(payload), headers: { 'Content-Type': 'application/json' }
       }).then(() => {
         this.submitting = false;
-        alert('Gracias por tu respuesta. Recibir\u00e1s una propuesta en menos de 24h.');
+        this.showToast('success', 'Diagn\u00f3stico recibido', 'Recibir\u00e1s una propuesta en menos de 24h.');
         this.wizardStep = 1;
         this.wizardData = { goal: '', audience: '', existing: '', frontend: '', backend: '', database: '', auth: '', api: '', ai: '', timeline: '', maintenance: '', budget: '' };
       }).catch(() => {
         this.submitting = false;
-        alert('Hubo un error al enviar. Por favor escribe directamente a sebpowerop@hotmail.com');
+        this.showToast('error', 'Error al enviar', 'Escribe directamente a sebpowerop@hotmail.com');
       });
     },
 
     // ---- Portfolio ----
     portfolioItems: [
-      { tag: 'Landing Page', name: 'E-commerce Dashboard', desc: 'Panel de administraci\u00f3n con m\u00e9tricas en tiempo real.', pattern: 'circuit', patternClass: '' },
-      { tag: 'Web App', name: 'AI Content Generator', desc: 'Plataforma de generaci\u00f3n de contenido con IA.', pattern: 'wave', patternClass: '' },
-      { tag: 'Prototipo', name: 'Social Analytics', desc: 'Dashboard de an\u00e1lisis de redes sociales.', pattern: 'prism', patternClass: '' },
-      { tag: 'Redise\u00f1o', name: 'SaaS Landing Page', desc: 'Redise\u00f1o completo de p\u00e1gina de producto SaaS.', pattern: 'pulse', patternClass: '' },
-      { tag: 'API', name: 'Payment Gateway', desc: 'API de procesamiento de pagos con webhooks.', pattern: 'dots', patternClass: '' },
-      { tag: 'MVP', name: 'Task Manager App', desc: 'Aplicaci\u00f3n de gesti\u00f3n de tareas con equipos.', pattern: 'grid', patternClass: '' },
-      { tag: 'Landing Page', name: 'Portfolio Website', desc: 'Sitio personal con blog integrado.', pattern: 'circuit', patternClass: '' },
-      { tag: 'Web App', name: 'Real-time Chat', desc: 'Sistema de chat en tiempo real con salas.', pattern: 'wave', patternClass: '' }
+      { tag: 'Landing Page', name: 'E-commerce Dashboard', desc: 'Panel de administraci\u00f3n con m\u00e9tricas en tiempo real.', image: 'https://html5up.net/uploads/images/paradigm-shift.jpg' },
+      { tag: 'Web App', name: 'AI Content Generator', desc: 'Plataforma de generaci\u00f3n de contenido con IA.', image: 'https://html5up.net/uploads/images/massively.jpg' },
+      { tag: 'Prototipo', name: 'Social Analytics', desc: 'Dashboard de an\u00e1lisis de redes sociales.', image: 'https://html5up.net/uploads/images/ethereal.jpg' },
+      { tag: 'Redise\u00f1o', name: 'SaaS Landing Page', desc: 'Redise\u00f1o completo de p\u00e1gina de producto SaaS.', image: 'https://html5up.net/uploads/images/story.jpg' },
+      { tag: 'API', name: 'Payment Gateway', desc: 'API de procesamiento de pagos con webhooks.', image: 'https://html5up.net/uploads/images/dimension.jpg' },
+      { tag: 'MVP', name: 'Task Manager App', desc: 'Aplicaci\u00f3n de gesti\u00f3n de tareas con equipos.', image: 'https://html5up.net/uploads/images/editorial.jpg' },
+      { tag: 'Landing Page', name: 'Portfolio Website', desc: 'Sitio personal con blog integrado.', image: 'https://html5up.net/uploads/images/phantom.jpg' },
+      { tag: 'Web App', name: 'Real-time Chat', desc: 'Sistema de chat en tiempo real con salas.', image: 'https://html5up.net/uploads/images/stellar.jpg' }
     ],
 
 
